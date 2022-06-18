@@ -1,9 +1,11 @@
 #include "sort.h"
 
 /**
- * swap - 
+ * swap - swap two nodes of position
+ * @number_a: pointer to node a
+ * @number_b: pointer to node b
  *
- *
+ * Return: none
  */
 
 void swap(int *number_a, int *number_b)
@@ -15,14 +17,17 @@ void swap(int *number_a, int *number_b)
 }
 
 /**
+ * selection_sort - give order to a list
+ * @array: pointer to list
+ * @size: size of list
  *
- *
- *
+ * Return: none
  */
 
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, low_value = 1;
+
 	if (array == NULL || !*array)
 		return;
 

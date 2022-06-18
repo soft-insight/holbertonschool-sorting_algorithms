@@ -1,9 +1,13 @@
 #include "sort.h"
 
 /**
+ * swap - swap two nodes
+ * @array: pointer to head list
+ * @min: position to change with max
+ * @max: position to change with min
+ * @size: size of the list
  *
- *
- *
+ * Return: none
  */
 
 void swap(int *array, int min, int max, size_t size)
@@ -19,6 +23,16 @@ void swap(int *array, int min, int max, size_t size)
 		print_array(array, size);
 	}
 }
+
+/**
+ * div_array - divide array and search nodes for change
+ * @array: pointer to head of the list
+ * @min: position give to start comparation
+ * @max: position give to end comparation
+ * @size: size of the list
+ *
+ * Return: position to continue
+ */
 
 int div_array(int *array, int min, int max, size_t size)
 {
@@ -38,6 +52,16 @@ int div_array(int *array, int min, int max, size_t size)
 	return (storage);
 }
 
+/**
+ * search - search node to change
+ * @array: pointer to head of the list
+ * @min: position give to start comparation
+ * @max: position give to end comparation
+ * @size: size of the list
+ *
+ * Return: none
+ */
+
 void search(int *array, int min, int max, size_t size)
 {
 	int d;
@@ -49,6 +73,14 @@ void search(int *array, int min, int max, size_t size)
 		search(array, d + 1, max, size);
 	}
 }
+
+/**
+ * quick_sort - give order to list
+ * @array: pointer to head of list
+ * @size: size of the list
+ *
+ * Return: none
+ */
 
 void quick_sort(int *array, size_t size)
 {
