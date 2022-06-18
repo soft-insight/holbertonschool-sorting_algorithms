@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- *
+ * swap - 
  *
  *
  */
@@ -22,17 +22,21 @@ void swap(int *number_a, int *number_b)
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, i_min;
+	size_t i, j, low_value = 1;
+	if (array == NULL || !*array)
+		return;
 
-	for (j = 0; j < size - 2; j++)
+	for (j = 0; j < size; j++)
 	{
-		i_min = j;
-		for (i = j; i < size - 1; i++)
+		for (i = j, low_value = j; i < size; i++)
 		{
-			if (array[i + 1] < array[i_min])
-				i_min = i + 1;
+			if (array[i] < array[low_value])
+				low_value = i;
 		}
-		swap(array + j, array + i_min);
-		print_array(array, size);
+		if (j != low_value)
+		{
+			swap(array + j, array + low_value);
+			print_array(array, size);
+		}
 	}
 }
